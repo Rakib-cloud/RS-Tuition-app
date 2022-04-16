@@ -1,10 +1,10 @@
 [
     {
         "id": 1,
-        "name": "HSC-ICT-CRASH",
+        "name": "HSC -LONG-COURSE",
         "price": "300",
-        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
-        "img": "https://i.ibb.co/dGDkr4v/1.jpg"
+        "description": "The Higher Secondary Certificate (HSC) is a public examination credential in Bangladesh, India, and Pakistan. HSC is equivalent to GCE A Level in England and 3rd and 4th year of high schools in the United States.",
+        "img": "https://lh3.googleusercontent.com/p/AF1QipNNIX3yWT76Vn6qYLidn0CPSin_oVlqbKGWzr6x=w1080-h608-p-no-v0"
     },
     {
         "id": 2,

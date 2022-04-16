@@ -1,10 +1,31 @@
 import React from 'react';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div>
-            <h2>This is header</h2>
-        </div>
+        <>
+             <Navbar collapseOnSelect expand="lg" sticky='top' bg="dark" variant="dark" >
+  <Container>
+  <Navbar.Brand as={Link} to="/home">Rakib's Tuition point</Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="me-auto">
+      <Nav.Link as={Link} to="/home">Home</Nav.Link>
+      <Nav.Link as={Link} to="/about">About Me</Nav.Link>
+      <Nav.Link href="#pricing">Blogs</Nav.Link>
+      
+    </Nav>
+    <Nav>
+      <Nav.Link href="#deets">Login</Nav.Link>
+      <Nav.Link eventKey={2} href="#memes">
+        Register
+      </Nav.Link>
+    </Nav>
+  </Navbar.Collapse>
+  </Container>
+</Navbar>
+        </>
     );
 };
 
