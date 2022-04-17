@@ -3,6 +3,7 @@ import { Carousel } from 'react-bootstrap';
 import banner1 from '../../../images/banner/banner1.jpg';
 import banner2 from '../../../images/banner/banner2.jpg';
 import banner3 from '../../../images/banner/banner3.jpg';
+import './Banner.css';
 
 const Banner = () => {
     return (
@@ -15,32 +16,32 @@ const Banner = () => {
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      <h3 className='color'>Upcoming HSC BATCH-105</h3>
+      <p  className='color'>Please stay with me for something big is comming</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={banner1}
+      src={banner2}
       alt="Second slide"
     />
 
     <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <h3 className='color'>JSC upcoming batch</h3>
+      <p className='color'>so many blast are coming stay with me.</p>
     </Carousel.Caption>
   </Carousel.Item>
   <Carousel.Item>
     <img
       className="d-block w-100"
-      src={banner1}
+      src={banner3}
       alt="Third slide"
     />
 
     <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      <h3 className='color'>SSC batch 104</h3>
+      <p className='color'>Stay with me for upcoming batch</p>
     </Carousel.Caption>
   </Carousel.Item>
 </Carousel>
