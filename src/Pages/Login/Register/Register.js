@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import './Register.css';
 import auth from '../../../firebase.init';
 const Register = () => {
@@ -9,7 +9,10 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification: true}); //email verify 
+
+      //update profile work
+      const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
     const navigate = useNavigate();
     const navigateLogin = () => {
@@ -20,13 +23,19 @@ const Register = () => {
    }
     //handle register
 
-    const handleRegister = event => {
+    const handleRegister = async (event) => {
         event.preventDefault();
         const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         console.log(name,email,password)
         createUserWithEmailAndPassword(email,password);
+
+
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name });
+        console.log('Updated profile');
+        navigate('/home');
     }
     return (
         <div  className='register-form'>
