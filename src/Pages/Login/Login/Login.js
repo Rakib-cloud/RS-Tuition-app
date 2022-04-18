@@ -2,8 +2,11 @@ import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link,  useLocation,  useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import auth from '../../../firebase.init';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
@@ -18,7 +21,8 @@ const Login = () => {
     const passwordRef = useRef('');
     const navigate = useNavigate();
     const location = useLocation();
-
+   
+   
 
     //reset password 
 
@@ -39,15 +43,23 @@ const Login = () => {
     if(user){
         navigate(from, { replace: true });
     }
-
+     //if loading 
+     if (loading || sending) {
+        return <Loading></Loading>
+    }
 
     //reset password function 
 
     const resetPassword = async () => {
         const email = emailRef.current.value;
      
+        if (email) {
             await sendPasswordResetEmail(email);
-            alert('sent email')
+            toast('Sent email');
+        }
+        else{
+            toast('please enter your email address');
+        }
            
         
         
@@ -77,6 +89,7 @@ const Login = () => {
 
             <p>Forget Password? <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>Reset Password</button> </p>
             <SocialLogin></SocialLogin>
+            <ToastContainer />
         </div>
     );
 };
