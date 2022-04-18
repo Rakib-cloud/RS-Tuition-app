@@ -32,10 +32,10 @@ const Register = () => {
         createUserWithEmailAndPassword(email,password);
 
 
-        await createUserWithEmailAndPassword(email, password);
-        await updateProfile({ displayName: name });
-        console.log('Updated profile');
-        navigate('/home');
+        //await createUserWithEmailAndPassword(email, password);
+        // await updateProfile({ displayName: name });
+        // console.log('Updated profile');
+        // navigate('/home');
     }
     return (
         <div  className='register-form'>
@@ -47,7 +47,7 @@ const Register = () => {
 
                 <input type="password" name="password" id="" placeholder='Password' required />
 
-                <input type="submit" value="Register" />
+                <input className='common-btn' type="submit" value="Register" />
             </form>
             <p>Already have an account? <Link to="/login" className='text-primary pe-auto text-decoration-none' onClick={navigateLogin}>Please Login</Link> </p>
         </div>

@@ -1,6 +1,6 @@
 # Welcome to Rakib's Tuition point App
 
-Rakib's Tuition point app link [Rakib's Tuition point](https://burger-kingreviewer.netlify.app/).
+Rakib's Tuition point app link [Rakib's Tuition point](https://rakibstuitorialpoint.netlify.app/).
 
 ## Project Description
 

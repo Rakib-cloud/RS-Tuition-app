@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import './Login.css';
 
 const Login = () => {
     const [
@@ -81,7 +82,7 @@ const Login = () => {
                     <Form.Control ref={passwordRef} type="password" placeholder="Password" required />
                 </Form.Group>
                 
-                <Button variant="primary mx-auto w-50 d-block mb-2" type="submit" >
+                <Button className='common-btn' variant=" mx-auto w-50 d-block mb-2" type="submit" >
                     Login
                 </Button>
             </Form>
